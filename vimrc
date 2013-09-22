@@ -18,6 +18,9 @@ set tabstop=4
 set backspace=2
 set nu! "显示行号
 
+map <F12> :!python %
+map <F9> :!pdflatex %
+
 " Use Vim settings, rather than Vi settings (much better!).
 " This must be first, because it changes other options as a side effect.
 set nocompatible
