@@ -15,11 +15,17 @@ if v:progname =~? "evim"
 endif
 
 set tabstop=4
+set shiftwidth=2 "tab is 2 space
 set backspace=2
-set nu! "显示行号
+set nu! "show the line number
+
+set background=dark "my background
+colorscheme desert "my colorscheme
 
 map <F12> :!python %
 map <F9> :!pdflatex %
+nnoremap <F8> :setl noai nocin nosi inde=<CR>
+
 
 " Use Vim settings, rather than Vi settings (much better!).
 " This must be first, because it changes other options as a side effect.
@@ -125,6 +131,7 @@ set foldmethod=indent
 set foldlevel=10
 
 "Taglist Setting
+":NERDTree
 let Tlist_Ctags_Cmd='/usr/bin/ctags'
 let Tlist_Show_One_File=1
 let Tlist_OnlyWindow=1
@@ -172,4 +179,3 @@ nmap <silent> <leader>wm :WMToggle<cr>
 "filetype off " required!
 "set rtp+=~/.vim/bundle/vundle/
 "call vundle#rc()
-
