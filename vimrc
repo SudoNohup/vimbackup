@@ -2,6 +2,8 @@
 "
 " Maintainer:	Bram Moolenaar <Bram@vim.org>
 " Last change:	2011 Apr 15
+" Modified:    Jianyu Huang <jianyu@cs.utexas.edu>
+" Last change: 2014 Apr 8
 "
 " To use it, copy it to
 "     for Unix and OS/2:  ~/.vimrc
@@ -17,7 +19,7 @@ endif
 set tabstop=4
 set shiftwidth=2 "tab is 2 space
 set backspace=2
-set nu! "show the line number
+set nu "show the line number
 
 set background=dark "my background
 colorscheme desert "my colorscheme
@@ -25,6 +27,10 @@ colorscheme desert "my colorscheme
 map <F12> :!python %
 map <F9> :!pdflatex %
 nnoremap <F8> :setl noai nocin nosi inde=<CR>
+
+" Frequent Usage
+" :Tlist
+" :NERDTree
 
 
 " Use Vim settings, rather than Vi settings (much better!).
@@ -63,6 +69,11 @@ endif
 " Also switch on highlighting the last used search pattern.
 if &t_Co > 2 || has("gui_running")
   syntax on
+
+  " Modified by Jianyu
+  au BufNewFile,BufRead *.txx set filetype=cpp
+  au BufNewFile,BufRead *.cu set filetype=cpp
+
   set hlsearch
 endif
 
@@ -122,13 +133,24 @@ endif
 filetype plugin on
 let g:pydiction_location = '~/.vim/after/ftplugin/pydiction/complete-dict'
 let g:pydiction_menu_height = 20
-set autoindent
+"set autoindent
 syntax enable
-set softtabstop=4
-set shiftwidth=4
-set number
+"set softtabstop=4
+"set shiftwidth=2
+"The following is referred to vim.wikia.com/wiki/Folding
+"zc close a fold
+"zo open a fold
+"za toggle the current fold: close if it was open, or open it if it was closed
+"zC, zO, zA: domain: all folds (Nested outside)
+"zr reduces folding by opening one more level of folds throughout the whole
+"buffer.
+"zR open all folds
+"zm give more folding by closing one more level of folds throughout the whole
+"buffer
+"zM close all folds
 set foldmethod=indent
 set foldlevel=10
+set autowrite
 
 "Taglist Setting
 ":NERDTree
@@ -179,3 +201,4 @@ nmap <silent> <leader>wm :WMToggle<cr>
 "filetype off " required!
 "set rtp+=~/.vim/bundle/vundle/
 "call vundle#rc()
+
