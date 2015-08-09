@@ -116,8 +116,10 @@ if &t_Co > 2 || has("gui_running")
   syntax on
 
   " Modified by Jianyu
-  au BufNewFile,BufRead *.txx set filetype=cpp
-  au BufNewFile,BufRead *.cu set filetype=cpp
+  au BufNewFile,BufRead *.txx set  filetype=cpp
+  au BufNewFile,BufRead *.cu  set  filetype=cpp
+  au BufNewFile,BufRead *.cl  set  filetype=cpp
+  "au BufNewFile,BufRead *.cl  setf opencl
 
   set hlsearch
 endif
