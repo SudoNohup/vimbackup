@@ -61,9 +61,11 @@ if v:progname =~? "evim"
   finish
 endif
 
+" Use :retab to manually expand tab into 4 spaces
 set tabstop=4
 set shiftwidth=2 "tab is 2 space
 set backspace=2
+set expandtab
 set nu "show the line number
 
 set background=dark "my background
