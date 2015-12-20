@@ -1,3 +1,8 @@
+"set tw = 80 (set 80 characters for one line)
+":retab to manually expand tab into 4 spaces
+":ConqueTermVSplit bash (split vim editor with a terminal)
+
+
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
@@ -62,6 +67,9 @@ if v:progname =~? "evim"
 endif
 
 " Use :retab to manually expand tab into 4 spaces
+" set tw=0  "unset textwidth option
+" set tw=79 "set textwidth = 79
+" set tw=80
 set tabstop=4
 set shiftwidth=2 "tab is 2 space
 set backspace=2
@@ -92,7 +100,7 @@ if has("vms")
 else
   set backup		" keep a backup file
 endif
-set history=50		" keep 50 lines of command line history
+set history=100		" keep 50 lines of command line history
 set ruler		" show the cursor position all the time
 set showcmd		" display incomplete commands
 set incsearch		" do incremental searching
