@@ -72,7 +72,7 @@ endif
 " set tw=80
 set tabstop=4
 set shiftwidth=2 "tab is 2 space
-set backspace=2
+set backspace=2 "set backspace=indent,eol,start
 set expandtab
 set nu "show the line number
 
