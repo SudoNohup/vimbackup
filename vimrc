@@ -1,7 +1,9 @@
 "set tw = 80 (set 80 characters for one line)
 ":retab to manually expand tab into 4 spaces
 ":ConqueTermVSplit bash (split vim editor with a terminal)
+"add text at the end of each line in Vim?::%s/$/,/ OR vip<C-V>$A,<Esc>
 
+set cinkeys-=0#               "indent for #pragma: http://stackoverflow.com/questions/12469463/vim-c-back-indent-with
 
 set nocompatible              " be iMproved, required
 filetype off                  " required
@@ -71,9 +73,9 @@ endif
 " set tw=79 "set textwidth = 79
 " set tw=80
 set tabstop=4
-set shiftwidth=2 "tab is 2 space
+set shiftwidth=4 "tab is 4 space
 set backspace=2 "set backspace=indent,eol,start
-set expandtab
+set expandtab "auto expand tab to space, http://vim.wikia.com/wiki/Converting_tabs_to_spaces
 set nu "show the line number
 
 set background=dark "my background
