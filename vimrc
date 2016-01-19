@@ -2,6 +2,7 @@
 ":retab to manually expand tab into 4 spaces
 ":ConqueTermVSplit bash (split vim editor with a terminal)
 "add text at the end of each line in Vim?::%s/$/,/ OR vip<C-V>$A,<Esc>
+"After :set=80, choose the text, then "gqq
 
 set cinkeys-=0#               "indent for #pragma: http://stackoverflow.com/questions/12469463/vim-c-back-indent-with
 
