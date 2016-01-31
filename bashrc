@@ -28,6 +28,7 @@ if [[ $(hostname) =~ .*stampede.* ]]; then
   module load fftw3
   module load cuda
 
+  alias knn=' cd /work/03223/jianyu/Project/knn/src'
   alias gpu='srun -A PADAS -p gpu -t 1:00:00 -n 32 --pty /bin/bash -l'
 fi
 
@@ -41,7 +42,13 @@ if [[ $(hostname) =~ .*maverick.* ]]; then
   alias gpu='srun -A PADAS -p gpu -t 1:00:00 -n 40 --pty /bin/bash -l'
 fi
 
+## Wrangler Setup
+if [[ $(hostname) =~ .*wrangler.* ]]; then
+  echo $(hostname)
 
+  alias knn=' cd /home/03223/jianyu/Project/knn'
+  alias gpu='srun -A PADAS -p gpu -t 1:00:00 -n 40 --pty /bin/bash -l'
+fi
 
 
 ## Git command line display
@@ -75,3 +82,4 @@ alias du='du -kh'
 #alias ls='ls -h --color'
 alias h='history'
 alias j='jobs -l'
+
