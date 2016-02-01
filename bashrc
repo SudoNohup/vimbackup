@@ -18,7 +18,7 @@ if [[ $(hostname) =~ .*ronaldo.* ]]; then
   module load matlab
   module list
 
-  alias knn='cd /h1/jianyu/Projects/knn'
+  alias knn='cd /h1/jianyu/Projects/knn/src'
 fi
 
 
@@ -28,6 +28,7 @@ if [[ $(hostname) =~ .*stampede.* ]]; then
   module load fftw3
   module load cuda
 
+  alias knn=' cd /work/03223/jianyu/Project/knn/src'
   alias gpu='srun -A PADAS -p gpu -t 1:00:00 -n 32 --pty /bin/bash -l'
 fi
 
@@ -41,7 +42,13 @@ if [[ $(hostname) =~ .*maverick.* ]]; then
   alias gpu='srun -A PADAS -p gpu -t 1:00:00 -n 40 --pty /bin/bash -l'
 fi
 
+## Wrangler Setup
+if [[ $(hostname) =~ .*wrangler.* ]]; then
+  echo $(hostname)
 
+  alias knn=' cd /home/03223/jianyu/Project/knn/src'
+  alias gpu='srun -A PADAS -p gpu -t 1:00:00 -n 40 --pty /bin/bash -l'
+fi
 
 
 ## Git command line display
@@ -60,7 +67,8 @@ function git_since_last_commit {
   echo "${hours_since_last_commit}h${minutes_since_last_commit}m ";
 }
 
-PS1="[\[\033[1;32m\]\u@\h: \W\[\033[0m\]] \[\033[0m\]\[\033[1;36m\]\$(git_branch)\[\033[0;33m\]\$(git_since_last_commit)\[\033[0m\]$ "
+#PS1="[\[\033[1;32m\]\u@\h: \W\[\033[0m\]] \[\033[0m\]\[\033[1;36m\]\$(git_branch)\[\033[0;33m\]\$(git_since_last_commit)\[\033[0m\]$ "
+PS1="[\[\033[1;32m\]\u@\H: \w\[\033[0m\]] \[\033[0m\]\[\033[1;36m\]\$(git_branch)\[\033[0;33m\]\$(git_since_last_commit)\[\033[0m\]$ "
 
 
 ## Common alias
@@ -75,3 +83,4 @@ alias du='du -kh'
 #alias ls='ls -h --color'
 alias h='history'
 alias j='jobs -l'
+
