@@ -18,7 +18,7 @@ if [[ $(hostname) =~ .*ronaldo.* ]]; then
   module load matlab
   module list
 
-  alias knn='cd /h1/jianyu/Projects/knn'
+  alias knn='cd /h1/jianyu/Projects/knn/src'
 fi
 
 
@@ -46,7 +46,7 @@ fi
 if [[ $(hostname) =~ .*wrangler.* ]]; then
   echo $(hostname)
 
-  alias knn=' cd /home/03223/jianyu/Project/knn'
+  alias knn=' cd /home/03223/jianyu/Project/knn/src'
   alias gpu='srun -A PADAS -p gpu -t 1:00:00 -n 40 --pty /bin/bash -l'
 fi
 
