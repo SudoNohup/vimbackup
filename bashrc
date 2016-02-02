@@ -38,6 +38,7 @@ if [[ $(hostname) =~ .*maverick.* ]]; then
   echo $(hostname)
   module load cuda
 
+  alias strassen='/home/03223/jianyu/Work/Github/blis-strassen'
   alias knn=' cd /work/03223/jianyu/Project/knn/src'
   alias gpu='srun -A PADAS -p gpu -t 1:00:00 -n 40 --pty /bin/bash -l'
 fi
