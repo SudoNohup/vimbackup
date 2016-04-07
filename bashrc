@@ -11,7 +11,7 @@ fi
 
 ## Ronaldo Setup
 if [[ $(hostname) =~ .*ronaldo.* ]]; then
-  echo $(hostname)
+  #echo $(hostname)
   module load intel
   module load mkl
   module load openmpi
@@ -24,7 +24,7 @@ fi
 
 ## Stampede Setup
 if [[ $(hostname) =~ .*stampede.* ]]; then
-  echo $(hostname)
+  #echo $(hostname)
   module load fftw3
   module load cuda
 
@@ -35,7 +35,7 @@ fi
 
 ## Maverick Setup
 if [[ $(hostname) =~ .*maverick.* ]]; then
-  echo $(hostname)
+  #echo $(hostname)
   module load cuda
 
   alias strassen='cd /home/03223/jianyu/Work/Github/blis-strassen'
@@ -45,7 +45,7 @@ fi
 
 ## Wrangler Setup
 if [[ $(hostname) =~ .*wrangler.* ]]; then
-  echo $(hostname)
+  #echo $(hostname)
 
   alias knn='cd /home/03223/jianyu/Project/knn/src'
   alias gpu='srun -A PADAS -p gpu -t 1:00:00 -n 40 --pty /bin/bash -l'
