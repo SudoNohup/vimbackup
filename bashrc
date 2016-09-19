@@ -51,6 +51,13 @@ if [[ $(hostname) =~ .*wrangler.* ]]; then
   alias gpu='srun -A PADAS -p gpu -t 1:00:00 -n 40 --pty /bin/bash -l'
 fi
 
+## LoneStar 5 Setup
+if [[ $(hostname) =~ .*ls5.* ]]; then
+  #echo $(hostname)
+
+  #alias gpu='srun -A PADAS -p gpu -t 1:00:00 -n 40 --pty /bin/bash -l'
+fi
+
 
 ## Git command line display
 function git_branch {
